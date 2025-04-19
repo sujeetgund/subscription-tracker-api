@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+    container_name: subscription-tracker-dev
+    image: subscription-tracker
+    ports:
+      - "5500:5500"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    env_file:
+      - .env.development.local
+    command: pnpm run dev
