@@ -1,5 +1,63 @@
 # API Documentation
 
+[![Docker](https://img.shields.io/badge/docker-ready-blue?logo=docker)](https://www.docker.com/)
+[![Node.js](https://img.shields.io/badge/node-%3E=18.0.0-green?logo=node.js)](https://nodejs.org/)
+[![pnpm](https://img.shields.io/badge/pnpm-fast%20&%20efficient-orange?logo=pnpm)](https://pnpm.io/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Made with Love](https://img.shields.io/badge/made%20with-%E2%9D%A4-red)](https://github.com/sujeetgund)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/sujeetgund/subscription-tracker-api/issues)
+
+## Getting Started
+
+### Prerequisites
+
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [pnpm](https://pnpm.io/) (Optional) if running outside Docker
+
+---
+
+### 🐳 Running in Development (with Docker)
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/yourusername/subscription-tracker.git
+   cd subscription-tracker
+   ```
+
+2. **Copy the _.env.example_ file**
+
+   ```bash
+   cp .env.example .env.development.local
+   ```
+
+3. **Run the app**
+
+   ```bash
+   docker-compose up
+   ```
+
+   The server will be available at: http://localhost:5500
+
+
+### Running in Development (without Docker)
+
+```bash
+cp .env.example .env.development.local
+pnpm install
+pnpm run dev
+```
+
+### 📦 Production Build (with Docker)
+
+```bash
+docker build -t subscription-tracker .
+docker run -d -p 5500:5500 --env-file .env.production subscription-tracker
+```
+
+---
+
 ## Base URL
 ```
 /api/v1
